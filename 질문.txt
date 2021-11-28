@@ -1,0 +1,29 @@
+1. 목록으로 돌아갈때
+-jsp-
+<form action="/board/list" method="get"><button type="submit">목록</button></form>
+
+주소창에 끝에 ? 라고 뜨긴 하는데, 별 이상은 없어보임.
+
+2. modify.jsp에서
+textarea로 name=content만 보내주는데, 
+
+@PostMapping("/board/modify")
+    public String modifyPost(Board board) {
+        ?????????????
+        return "board/content";
+    }
+
+writer랑 title은 어떻게 받아야할까
+
+3. score 에서
+홈화면으로 버튼는 button태그로 자바스크립트 이용해서 감.
+//홈화면으로 버튼 이벤트
+            const $homeBtn = document.getElementById('go-home');
+            $homeBtn.onclick = e => {
+                location.href = '/';
+            }
+맨위 화면으로, 삭제 버튼은 a태그로.
+
+button은 자바스크립트 써야해서 불편함.  구분해서 쓰는건가?
+
+4. 수정요청 post 에서는 왜 redirect를 안쓸까
